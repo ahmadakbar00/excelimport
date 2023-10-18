@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImportExportController;
+use App\Http\Controllers\WaController;
 
 
 /*
@@ -18,6 +19,12 @@ use App\Http\Controllers\ImportExportController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/wa', [WaController::class, 'index']);
 
 Route::controller(ImportExportController::class)->group(function(){
     Route::get('import_export', 'importExport');
